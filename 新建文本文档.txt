@@ -1,0 +1,18 @@
+辗转相除法求最大公约数
+    int r = a % b;
+    while (r != 0)
+    {
+        a = b;
+        b = r;
+        r = a % b;
+    }
+    return r;
+}
+判断是不是数字
+    while(scanf("%c",&ch)!=EOF){
+        if(ch=='\n') continue;
+        if((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z')){
+            printf("YES\n");
+        }else{
+            printf("NO\n");
+ 
