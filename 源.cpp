@@ -1,22 +1,24 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+
+char* reverse_string(char* str)
+{
+    assert(str != NULL);
+    if (*str != '\0')
+    {
+        str++;
+        reverse_string(str);
+        printf("%c", *(str - 1));
+    }
+    return str;
+}
+
 int main()
 {
-	
-	int i ;
-	int c;
-	int sn=0;
-	int tem = 0;
-	printf("请输入一个函数\n");
-	scanf("%d",&c);
-	sn = c;
-	for (i = 1; i < 5; i++)
-	{
-		sn = sn * 10 + c ;
-		tem = sn+tem;
-	}
-	tem = tem + c;
-	printf("%d",tem);
-
-	return 0;
+    char arr[] = "abcdef";
+    char* ret = reverse_string(arr);
+    system("pause");
+    return 0;
 }
+
